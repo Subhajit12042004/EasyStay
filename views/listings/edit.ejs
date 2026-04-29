@@ -1,0 +1,61 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EasyStay</title>
+</head> -->
+<% layout('/layouts/boilerplate') -%>
+<body>
+    
+<div class="row">
+
+    <div class="col-8 offset-2">
+           <br></br>
+    <h3>Edit your Listings </h3>
+    <form method="POST" action="/listings/<%= listing._id %>?_method=PUT" class="needs-validation" novalidate>
+        <div class="md-3" >
+            <label for="title" class="form-lavel" >Title</label>
+             <input name="listing[title]" value="<%= listing.title %>" type="text"  class="form-control" required/>
+
+        </div>
+        <br>
+        <div class="md-3">
+            <label for="description" class="form-lavel" >Description</label>
+            <textarea name="listing[description]" class="form-control"required><%= listing.description %></textarea>
+        </div>
+        <br>
+        <div>
+        <div class="row">
+        <div class="md-3 col-md-4">
+            <label for="price" class="form-lavel" >Price</label>
+            <input name="listing[price]" value="<%= listing.price %>" type="Number" class="form-control"required>
+            </div>
+         <br>
+            <div class="md-3 col-md-8">
+            <label for="country" class="form-lavel" >Country</label>
+            <input name="listing[country]" value="<%= listing.country %>" type="text" class="form-control" required>
+        </div>
+        </div>
+        <br>
+       
+        <div class="md-3">
+             <label for="image" class="form-lavel" >Image</label>
+            <input name="listing[image][url]" value="<%= listing.image.url %>" type="text" class="form-control"required>
+        </div>
+        <br>
+        <div class="md-3">
+        <label for="location" class="form-lavel" >Location</label>
+        <input name="listing[location]" value="<%= listing.location %>" type="text" class="form-control"required>
+        </div>
+        <br>
+
+        <button class="add-edit">edit</button>
+    </form>
+    <br></br>
+
+    </div>
+    </div>
+     <script src="js/script.js"></script>
+</body>
+<!-- </html> -->
